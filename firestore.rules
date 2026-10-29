@@ -1,0 +1,23 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Content: anyone can read, nobody writes from client (seed with admin script)
+    match /topics/{id}    { allow read: if true; allow write: if false; }
+    match /questions/{id} { allow read: if true; allow write: if false; }
+    match /challenges/{id}{ allow read: if true; allow write: if false; }
+
+    // User docs: leaderboard needs public read of xp/name; writes only via /api/progress (admin SDK)
+    match /users/{uid} {
+      allow read: if request.auth != null;
+      allow write: if false;
+    }
+
+    match /quizAttempts/{id} {
+      allow read: if request.auth != null && resource.data.uid == request.auth.uid;
+      allow write: if false;
+    }
+
+    match /rateLimits/{id} { allow read, write: if false; }
+  }
+}
