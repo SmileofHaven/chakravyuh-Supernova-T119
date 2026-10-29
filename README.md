@@ -1,5 +1,6 @@
 # Supernova — Smart ENTC Learning & Innovation Platform
 
+## [visit](https://chakravyuh-supernova-t119.vercel.app)
 A responsive React/Vite learning-platform prototype inspired by the supplied **ENTC_Platform_Curriculum_Content_Framework.pdf** and the Vanta globe reference. Built for GitHub and Vercel.
 
 ## Included
