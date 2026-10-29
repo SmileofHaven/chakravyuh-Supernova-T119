@@ -1,4 +1,4 @@
-import { auth } from "../firebase";
+import { auth } from "./firebase";
 
 async function call(path, method = "POST", body) {
   const user = auth.currentUser;

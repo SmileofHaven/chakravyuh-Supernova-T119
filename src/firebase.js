@@ -1,23 +1,19 @@
-import { auth } from "./firebase";
+import { initializeApp } from "firebase/app";
+import { getAuth, GoogleAuthProvider } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 
-// Calls our Vercel API routes with the logged-in user's Firebase token
-async function call(path, body) {
-  const user = auth.currentUser;
-  if (!user) throw new Error("Not logged in");
-  const token = await user.getIdToken();
-  const res = await fetch(path, {
-    method: "POST",
-    headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
-    body: JSON.stringify(body),
-  });
-  const data = await res.json();
-  if (!res.ok) throw new Error(data.error || "Request failed");
-  return data;
-}
+// Web config is public by design (security comes from Firestore rules + token checks)
+const firebaseConfig = {
+  apiKey: "AIzaSyCNRk3D6hVASj6MhhK2760iDRcc0a_6j94",
+  authDomain: "supernova-efac3.firebaseapp.com",
+  projectId: "supernova-efac3",
+  storageBucket: "supernova-efac3.firebasestorage.app",
+  messagingSenderId: "698296073760",
+  appId: "1:698296073760:web:9cb1e97898c94910878645",
+};
 
-// messages: [{role:"user"|"assistant", content}], mode: "tutor"|"debug"|"explain"
-export const chat = (messages, mode = "tutor") => call("/api/chat", { messages, mode });
+const app = initializeApp(firebaseConfig);
 
-// type: "lesson"|"quiz"|"challenge"
-export const saveProgress = (type, id, score = 0, total = 0) =>
-  call("/api/progress", { type, id, score, total });
+export const auth = getAuth(app);
+export const db = getFirestore(app);
+export const googleProvider = new GoogleAuthProvider();
