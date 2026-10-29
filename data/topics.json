@@ -1,0 +1,657 @@
+[
+    {
+     "tag": "engineering-math",
+     "title": "Engineering Math",
+     "year": 1,
+     "order": 0,
+     "thread": "circuits",
+     "prerequisites": [],
+     "estimatedHours": 8,
+     "masteryParts": {
+      "lesson": true,
+      "lab": true,
+      "code": true,
+      "quiz": true
+     },
+     "badge": "Engineering Math Master",
+     "comingSoon": true
+    },
+    {
+     "tag": "circuit-theory",
+     "title": "Circuit Theory",
+     "year": 1,
+     "order": 1,
+     "thread": "circuits",
+     "prerequisites": [],
+     "estimatedHours": 8,
+     "masteryParts": {
+      "lesson": true,
+      "lab": true,
+      "code": true,
+      "quiz": true
+     },
+     "badge": "Circuit Theory Master",
+     "comingSoon": true
+    },
+    {
+     "tag": "ac-resonance",
+     "title": "AC & Resonance",
+     "year": 1,
+     "order": 2,
+     "thread": "circuits",
+     "prerequisites": [
+      "circuit-theory"
+     ],
+     "estimatedHours": 8,
+     "masteryParts": {
+      "lesson": true,
+      "lab": true,
+      "code": true,
+      "quiz": true
+     },
+     "badge": "AC & Resonance Master",
+     "comingSoon": true
+    },
+    {
+     "tag": "semiconductor-basics",
+     "title": "Semiconductor Basics",
+     "year": 1,
+     "order": 3,
+     "thread": "circuits",
+     "prerequisites": [
+      "circuit-theory"
+     ],
+     "estimatedHours": 8,
+     "masteryParts": {
+      "lesson": true,
+      "lab": true,
+      "code": false,
+      "quiz": true
+     },
+     "badge": "Semiconductor Basics Master",
+     "comingSoon": true
+    },
+    {
+     "tag": "power-basics",
+     "title": "Power Basics",
+     "year": 1,
+     "order": 4,
+     "thread": "circuits",
+     "prerequisites": [],
+     "estimatedHours": 8,
+     "masteryParts": {
+      "lesson": true,
+      "lab": true,
+      "code": false,
+      "quiz": true
+     },
+     "badge": "Power Basics Master",
+     "comingSoon": true
+    },
+    {
+     "tag": "measurement",
+     "title": "Measurement",
+     "year": 1,
+     "order": 5,
+     "thread": "circuits",
+     "prerequisites": [],
+     "estimatedHours": 8,
+     "masteryParts": {
+      "lesson": true,
+      "lab": true,
+      "code": false,
+      "quiz": true
+     },
+     "badge": "Measurement Master",
+     "comingSoon": true
+    },
+    {
+     "tag": "programming-foundations",
+     "title": "Programming Foundations",
+     "year": 1,
+     "order": 6,
+     "thread": "computing",
+     "prerequisites": [],
+     "estimatedHours": 8,
+     "masteryParts": {
+      "lesson": true,
+      "lab": false,
+      "code": true,
+      "quiz": true
+     },
+     "badge": "Programming Foundations Master",
+     "comingSoon": true
+    },
+    {
+     "tag": "analog-electronics",
+     "title": "Analog Electronics",
+     "year": 2,
+     "order": 0,
+     "thread": "circuits",
+     "prerequisites": [
+      "semiconductor-basics"
+     ],
+     "estimatedHours": 8,
+     "masteryParts": {
+      "lesson": true,
+      "lab": true,
+      "code": false,
+      "quiz": true
+     },
+     "badge": "Analog Electronics Master",
+     "comingSoon": true
+    },
+    {
+     "tag": "op-amps-feedback",
+     "title": "Op-amps & Feedback",
+     "year": 2,
+     "order": 1,
+     "thread": "circuits",
+     "prerequisites": [
+      "analog-electronics"
+     ],
+     "estimatedHours": 8,
+     "masteryParts": {
+      "lesson": true,
+      "lab": true,
+      "code": true,
+      "quiz": true
+     },
+     "badge": "Op-amps & Feedback Master",
+     "comingSoon": true
+    },
+    {
+     "tag": "digital-electronics",
+     "title": "Digital Electronics",
+     "year": 2,
+     "order": 2,
+     "thread": "digital-embedded",
+     "prerequisites": [
+      "programming-foundations"
+     ],
+     "estimatedHours": 12,
+     "masteryParts": {
+      "lesson": true,
+      "lab": true,
+      "code": true,
+      "quiz": true
+     },
+     "badge": "Logic Builder",
+     "comingSoon": false
+    },
+    {
+     "tag": "signals-systems",
+     "title": "Signals & Systems",
+     "year": 2,
+     "order": 3,
+     "thread": "signals-comm",
+     "prerequisites": [
+      "engineering-math"
+     ],
+     "estimatedHours": 8,
+     "masteryParts": {
+      "lesson": true,
+      "lab": true,
+      "code": true,
+      "quiz": true
+     },
+     "badge": "Signals & Systems Master",
+     "comingSoon": true
+    },
+    {
+     "tag": "em-fields-waves",
+     "title": "EM Fields & Waves",
+     "year": 2,
+     "order": 4,
+     "thread": "fields-waves",
+     "prerequisites": [],
+     "estimatedHours": 8,
+     "masteryParts": {
+      "lesson": true,
+      "lab": true,
+      "code": true,
+      "quiz": true
+     },
+     "badge": "EM Fields & Waves Master",
+     "comingSoon": true
+    },
+    {
+     "tag": "microcontrollers",
+     "title": "Microcontroller Fundamentals",
+     "year": 2,
+     "order": 5,
+     "thread": "digital-embedded",
+     "prerequisites": [
+      "digital-electronics"
+     ],
+     "estimatedHours": 8,
+     "masteryParts": {
+      "lesson": true,
+      "lab": true,
+      "code": true,
+      "quiz": true
+     },
+     "badge": "Microcontroller Fundamentals Master",
+     "comingSoon": true
+    },
+    {
+     "tag": "programming-entc",
+     "title": "Programming for ENTC",
+     "year": 2,
+     "order": 6,
+     "thread": "computing",
+     "prerequisites": [],
+     "estimatedHours": 8,
+     "masteryParts": {
+      "lesson": true,
+      "lab": false,
+      "code": true,
+      "quiz": true
+     },
+     "badge": "Programming for ENTC Master",
+     "comingSoon": true
+    },
+    {
+     "tag": "random-processes",
+     "title": "Probability & Random Processes",
+     "year": 3,
+     "order": 0,
+     "thread": "signals-comm",
+     "prerequisites": [],
+     "estimatedHours": 8,
+     "masteryParts": {
+      "lesson": true,
+      "lab": true,
+      "code": true,
+      "quiz": true
+     },
+     "badge": "Probability & Random Processes Master",
+     "comingSoon": true
+    },
+    {
+     "tag": "analog-comm",
+     "title": "Analog Communication",
+     "year": 3,
+     "order": 1,
+     "thread": "signals-comm",
+     "prerequisites": [
+      "signals-systems"
+     ],
+     "estimatedHours": 8,
+     "masteryParts": {
+      "lesson": true,
+      "lab": true,
+      "code": true,
+      "quiz": true
+     },
+     "badge": "Analog Communication Master",
+     "comingSoon": true
+    },
+    {
+     "tag": "digital-comm",
+     "title": "Digital Communication",
+     "year": 3,
+     "order": 2,
+     "thread": "signals-comm",
+     "prerequisites": [
+      "analog-comm"
+     ],
+     "estimatedHours": 8,
+     "masteryParts": {
+      "lesson": true,
+      "lab": true,
+      "code": true,
+      "quiz": true
+     },
+     "badge": "Digital Communication Master",
+     "comingSoon": true
+    },
+    {
+     "tag": "dsp",
+     "title": "DSP",
+     "year": 3,
+     "order": 3,
+     "thread": "signals-comm",
+     "prerequisites": [
+      "signals-systems"
+     ],
+     "estimatedHours": 8,
+     "masteryParts": {
+      "lesson": true,
+      "lab": true,
+      "code": true,
+      "quiz": true
+     },
+     "badge": "DSP Master",
+     "comingSoon": true
+    },
+    {
+     "tag": "control-systems",
+     "title": "Control Systems",
+     "year": 3,
+     "order": 4,
+     "thread": "control",
+     "prerequisites": [
+      "signals-systems"
+     ],
+     "estimatedHours": 8,
+     "masteryParts": {
+      "lesson": true,
+      "lab": true,
+      "code": true,
+      "quiz": true
+     },
+     "badge": "Control Systems Master",
+     "comingSoon": true
+    },
+    {
+     "tag": "computer-networks",
+     "title": "Computer Networks",
+     "year": 3,
+     "order": 5,
+     "thread": "computing",
+     "prerequisites": [],
+     "estimatedHours": 8,
+     "masteryParts": {
+      "lesson": true,
+      "lab": true,
+      "code": true,
+      "quiz": true
+     },
+     "badge": "Computer Networks Master",
+     "comingSoon": true
+    },
+    {
+     "tag": "vlsi-design",
+     "title": "VLSI Design",
+     "year": 3,
+     "order": 6,
+     "thread": "digital-embedded",
+     "prerequisites": [],
+     "estimatedHours": 8,
+     "masteryParts": {
+      "lesson": true,
+      "lab": true,
+      "code": true,
+      "quiz": true
+     },
+     "badge": "VLSI Design Master",
+     "comingSoon": true
+    },
+    {
+     "tag": "antennas-propagation",
+     "title": "Antennas & Propagation",
+     "year": 3,
+     "order": 7,
+     "thread": "fields-waves",
+     "prerequisites": [],
+     "estimatedHours": 8,
+     "masteryParts": {
+      "lesson": true,
+      "lab": true,
+      "code": true,
+      "quiz": true
+     },
+     "badge": "Antennas & Propagation Master",
+     "comingSoon": true
+    },
+    {
+     "tag": "sensors-instrumentation",
+     "title": "Sensors & Instrumentation",
+     "year": 3,
+     "order": 8,
+     "thread": "circuits",
+     "prerequisites": [],
+     "estimatedHours": 8,
+     "masteryParts": {
+      "lesson": true,
+      "lab": true,
+      "code": true,
+      "quiz": true
+     },
+     "badge": "Sensors & Instrumentation Master",
+     "comingSoon": true
+    },
+    {
+     "tag": "power-electronics",
+     "title": "Power Electronics",
+     "year": 3,
+     "order": 9,
+     "thread": "circuits",
+     "prerequisites": [],
+     "estimatedHours": 8,
+     "masteryParts": {
+      "lesson": true,
+      "lab": true,
+      "code": false,
+      "quiz": true
+     },
+     "badge": "Power Electronics Master",
+     "comingSoon": true
+    },
+    {
+     "tag": "professional-skills",
+     "title": "Professional Skills",
+     "year": 3,
+     "order": 10,
+     "thread": "computing",
+     "prerequisites": [],
+     "estimatedHours": 8,
+     "masteryParts": {
+      "lesson": true,
+      "lab": false,
+      "code": false,
+      "quiz": true
+     },
+     "badge": "Professional Skills Master",
+     "comingSoon": true
+    },
+    {
+     "tag": "programming-systems",
+     "title": "Programming for Systems",
+     "year": 3,
+     "order": 11,
+     "thread": "computing",
+     "prerequisites": [],
+     "estimatedHours": 8,
+     "masteryParts": {
+      "lesson": true,
+      "lab": false,
+      "code": true,
+      "quiz": true
+     },
+     "badge": "Programming for Systems Master",
+     "comingSoon": true
+    },
+    {
+     "tag": "wireless-mobile",
+     "title": "Wireless & Mobile",
+     "year": 4,
+     "order": 0,
+     "thread": "signals-comm",
+     "prerequisites": [
+      "digital-comm"
+     ],
+     "estimatedHours": 8,
+     "masteryParts": {
+      "lesson": true,
+      "lab": true,
+      "code": true,
+      "quiz": true
+     },
+     "badge": "Wireless & Mobile Master",
+     "comingSoon": true
+    },
+    {
+     "tag": "microwave-rf",
+     "title": "Microwave & RF",
+     "year": 4,
+     "order": 1,
+     "thread": "fields-waves",
+     "prerequisites": [],
+     "estimatedHours": 8,
+     "masteryParts": {
+      "lesson": true,
+      "lab": true,
+      "code": true,
+      "quiz": true
+     },
+     "badge": "Microwave & RF Master",
+     "comingSoon": true
+    },
+    {
+     "tag": "optical-fibre",
+     "title": "Optical Fibre",
+     "year": 4,
+     "order": 2,
+     "thread": "fields-waves",
+     "prerequisites": [],
+     "estimatedHours": 8,
+     "masteryParts": {
+      "lesson": true,
+      "lab": true,
+      "code": false,
+      "quiz": true
+     },
+     "badge": "Optical Fibre Master",
+     "comingSoon": true
+    },
+    {
+     "tag": "satellite-radar",
+     "title": "Satellite & Radar",
+     "year": 4,
+     "order": 3,
+     "thread": "fields-waves",
+     "prerequisites": [],
+     "estimatedHours": 8,
+     "masteryParts": {
+      "lesson": true,
+      "lab": true,
+      "code": true,
+      "quiz": true
+     },
+     "badge": "Satellite & Radar Master",
+     "comingSoon": true
+    },
+    {
+     "tag": "advanced-iot-embedded",
+     "title": "Advanced IoT & Embedded",
+     "year": 4,
+     "order": 4,
+     "thread": "digital-embedded",
+     "prerequisites": [],
+     "estimatedHours": 8,
+     "masteryParts": {
+      "lesson": true,
+      "lab": true,
+      "code": true,
+      "quiz": true
+     },
+     "badge": "Advanced IoT & Embedded Master",
+     "comingSoon": true
+    },
+    {
+     "tag": "ai-ml-entc",
+     "title": "AI/ML for ENTC",
+     "year": 4,
+     "order": 5,
+     "thread": "computing",
+     "prerequisites": [
+      "dsp"
+     ],
+     "estimatedHours": 8,
+     "masteryParts": {
+      "lesson": true,
+      "lab": true,
+      "code": true,
+      "quiz": true
+     },
+     "badge": "AI/ML for ENTC Master",
+     "comingSoon": true
+    },
+    {
+     "tag": "image-video-processing",
+     "title": "Image & Video Processing",
+     "year": 4,
+     "order": 6,
+     "thread": "signals-comm",
+     "prerequisites": [],
+     "estimatedHours": 8,
+     "masteryParts": {
+      "lesson": true,
+      "lab": true,
+      "code": true,
+      "quiz": true
+     },
+     "badge": "Image & Video Processing Master",
+     "comingSoon": true
+    },
+    {
+     "tag": "crypto-network-security",
+     "title": "Cryptography & Network Security",
+     "year": 4,
+     "order": 7,
+     "thread": "computing",
+     "prerequisites": [],
+     "estimatedHours": 8,
+     "masteryParts": {
+      "lesson": true,
+      "lab": true,
+      "code": true,
+      "quiz": true
+     },
+     "badge": "Cryptography & Network Security Master",
+     "comingSoon": true
+    },
+    {
+     "tag": "advanced-vlsi",
+     "title": "Advanced VLSI",
+     "year": 4,
+     "order": 8,
+     "thread": "digital-embedded",
+     "prerequisites": [],
+     "estimatedHours": 8,
+     "masteryParts": {
+      "lesson": true,
+      "lab": true,
+      "code": true,
+      "quiz": true
+     },
+     "badge": "Advanced VLSI Master",
+     "comingSoon": true
+    },
+    {
+     "tag": "emi-emc-pcb",
+     "title": "EMI/EMC, PCB & Standards",
+     "year": 4,
+     "order": 9,
+     "thread": "circuits",
+     "prerequisites": [],
+     "estimatedHours": 8,
+     "masteryParts": {
+      "lesson": true,
+      "lab": true,
+      "code": false,
+      "quiz": true
+     },
+     "badge": "EMI/EMC, PCB & Standards Master",
+     "comingSoon": true
+    },
+    {
+     "tag": "programming-industry",
+     "title": "Programming for Industry",
+     "year": 4,
+     "order": 10,
+     "thread": "computing",
+     "prerequisites": [],
+     "estimatedHours": 8,
+     "masteryParts": {
+      "lesson": true,
+      "lab": false,
+      "code": true,
+      "quiz": true
+     },
+     "badge": "Programming for Industry Master",
+     "comingSoon": true
+    }
+   ]

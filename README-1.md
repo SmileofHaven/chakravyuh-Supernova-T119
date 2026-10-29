@@ -11,7 +11,7 @@
 
 | Name | GitHub |
 |------|--------|
-| Tech0-Genius | [@Tech0-Genius](https://github.com/Tech0-Genius) |
+| Techn0-Genius | [@Techn0-Genius](https://github.com/Techn0-Genius) |
 | MayureshMangave | [@MayureshMangave](https://github.com/MayureshMangave) |
 | SmileofHaven | [@SmileofHaven](https://github.com/SmileofHaven) |
 
@@ -45,6 +45,17 @@ The Smart ENTC Learning & Innovation Platform combines structured learning, brow
 
 ---
 
+## 🚧 Project Progress
+
+| Component | Status |
+|-----------|--------|
+| 🧱 Website skeleton (layout, pages, navigation) | ✅ Done |
+| 📖 Learning content (lessons, quizzes, challenges) | ✅ Done |
+| ⚙️ Backend (Firebase Auth, Firestore database and security rules, serverless API routes) | ✅ Done |
+| 🔗 Frontend ↔ backend connections (`/api/chat` for the AI assistant, `/api/progress` for XP, levels, streaks and leaderboard) | ✅ Done |
+
+---
+
 ## 🛠️ Tech Stack
 
 - **Frontend:** HTML, CSS, JavaScript
@@ -67,10 +78,10 @@ The Smart ENTC Learning & Innovation Platform combines structured learning, brow
 
 ```bash
 # Clone the repository
-git clone https://github.com/<your-org-or-username>/<repo-name>.git
+git clone https://github.com/SmileofHaven/chakravyuh-Supernova-T119.git
 
 # Move into the project folder
-cd <repo-name>
+cd chakravyuh-Supernova-T119
 
 # Open the platform
 # Option 1: open index.html directly in your browser

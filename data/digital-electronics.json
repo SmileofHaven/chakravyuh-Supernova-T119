@@ -1,0 +1,714 @@
+{
+    "lessons": [
+     {
+      "id": "digital-electronics-01",
+      "tag": "digital-electronics",
+      "title": "Logic Gates & Boolean Algebra",
+      "minutes": 8,
+      "levels": [
+       "simple",
+       "standard",
+       "interview"
+      ],
+      "goals": [
+       "Describe how digital circuits represent 0 and 1.",
+       "Write the truth table for AND, OR, NOT, NAND, NOR, XOR and XNOR.",
+       "Explain why NAND and NOR are called universal gates."
+      ],
+      "blocks": [
+       {
+        "type": "concept",
+        "title": "Two levels are enough",
+        "text": "A digital signal has two meaningful levels: LOW (logic 0) and HIGH (logic 1). In a 5 V logic system a voltage near 0 V is read as 0 and a voltage near 5 V is read as 1. Because the circuit only has to decide between two levels, small amounts of electrical noise do not change the stored bit. That is why computers are digital."
+       },
+       {
+        "type": "concept",
+        "title": "The three basic gates",
+        "table": {
+         "head": [
+          "Gate",
+          "Rule in words",
+          "Expression",
+          "Switch picture"
+         ],
+         "rows": [
+          {
+           "cells": [
+            "AND",
+            "Output is 1 only when all inputs are 1",
+            "Y = A \u00b7 B",
+            "Two switches in series"
+           ]
+          },
+          {
+           "cells": [
+            "OR",
+            "Output is 1 when any input is 1",
+            "Y = A + B",
+            "Two switches in parallel"
+           ]
+          },
+          {
+           "cells": [
+            "NOT",
+            "Output is the opposite of the input",
+            "Y = A'",
+            "A normally-closed switch"
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "type": "concept",
+        "title": "Derived gates",
+        "text": "NAND = NOT(AND): Y = (A \u00b7 B)', 0 only when both inputs are 1. NOR = NOT(OR): Y = (A + B)', 1 only when both inputs are 0. XOR: 1 when the inputs differ, Y = A'B + AB'. XNOR: 1 when the inputs are the same.",
+        "table": {
+         "head": [
+          "A",
+          "B",
+          "AND",
+          "OR",
+          "NAND",
+          "NOR",
+          "XOR",
+          "XNOR"
+         ],
+         "rows": [
+          {
+           "cells": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            1
+           ]
+          },
+          {
+           "cells": [
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1,
+            0
+           ]
+          },
+          {
+           "cells": [
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            1,
+            0
+           ]
+          },
+          {
+           "cells": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            1
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "type": "concept",
+        "title": "Universal gates",
+        "text": "Any logic function can be built from NAND gates alone (or NOR gates alone). Tying both inputs of a NAND together gives a NOT gate: A NAND A = A'. A NAND followed by a NOT (itself made from a NAND) gives AND; a NAND fed with inverted inputs gives OR."
+       },
+       {
+        "type": "keypoints",
+        "items": [
+         "Digital = two levels, so it resists noise.",
+         "A truth table for n inputs has 2^n rows.",
+         "XOR differs from OR only when both inputs are 1.",
+         "NAND and NOR are universal gates."
+        ]
+       },
+       {
+        "type": "formula",
+        "items": [
+         {
+          "name": "Identity / null",
+          "formula": "A + 0 = A ; A \u00b7 1 = A"
+         },
+         {
+          "name": "Complement",
+          "formula": "A + A' = 1 ; A \u00b7 A' = 0"
+         },
+         {
+          "name": "Absorption",
+          "formula": "A + AB = A"
+         },
+         {
+          "name": "De Morgan",
+          "formula": "(A \u00b7 B)' = A' + B' ; (A + B)' = A' \u00b7 B'"
+         }
+        ]
+       },
+       {
+        "type": "example",
+        "problem": "Simplify Y = A + A'B",
+        "steps": [
+         "A + A'B = (A + A')(A + B)",
+         "= 1 \u00b7 (A + B)"
+        ],
+        "answer": "Y = A + B"
+       },
+       {
+        "type": "mistakes",
+        "items": [
+         "Mixing up XOR and OR.",
+         "Forgetting that NAND of two 1s is 0.",
+         "Writing 6 rows for a 3-input table instead of 8."
+        ]
+       }
+      ],
+      "tryIt": {
+       "lab": "logic-gate-lab",
+       "code": "led-blink",
+       "quiz": "digital-basics"
+      },
+      "aiContext": "Digital signals have two levels (LOW=0, HIGH=1); noise immunity is why computers are digital. Gates: AND (series switches), OR (parallel switches), NOT. NAND=(A.B)' is 0 only when both inputs are 1; NOR=(A+B)' is 1 only when both inputs are 0; XOR is 1 when inputs differ; XNOR 1 when same. n inputs -> 2^n truth-table rows. NAND and NOR are universal: NAND with tied inputs = NOT. De Morgan: (A.B)'=A'+B', (A+B)'=A'.B'. Absorption: A+AB=A. Example: A+A'B = A+B. XOR from 4 NANDs: N1=NAND(A,B); N2=NAND(A,N1); N3=NAND(B,N1); out=NAND(N2,N3). Half adder: Sum=XOR, Carry=AND. Common mistakes: confusing XOR/OR, forgetting NAND(1,1)=0, 6 rows instead of 8."
+     }
+    ],
+    "questions": [
+     {
+      "id": "de-q1",
+      "tag": "digital-electronics",
+      "bank": "topic",
+      "type": "mcq",
+      "difficulty": "easy",
+      "timeSec": 20,
+      "prompt": "Output of a 2-input NAND gate when both inputs are 1?",
+      "options": [
+       "0",
+       "1",
+       "Undefined",
+       "Same as input"
+      ],
+      "answer": 0,
+      "explanation": "NAND = NOT(AND). AND gives 1, NOT flips it to 0.",
+      "lessonRef": "digital-electronics-01"
+     },
+     {
+      "id": "de-q2",
+      "tag": "digital-electronics",
+      "bank": "topic",
+      "type": "mcq",
+      "difficulty": "easy",
+      "timeSec": 20,
+      "prompt": "Which gate outputs 1 only when its two inputs are different?",
+      "options": [
+       "AND",
+       "OR",
+       "XOR",
+       "XNOR"
+      ],
+      "answer": 2,
+      "explanation": "XOR is 1 when inputs differ; XNOR is 1 when they match.",
+      "lessonRef": "digital-electronics-01"
+     },
+     {
+      "id": "de-q3",
+      "tag": "digital-electronics",
+      "bank": "topic",
+      "type": "mcq",
+      "difficulty": "easy",
+      "timeSec": 20,
+      "prompt": "Which pair of gates is called universal?",
+      "options": [
+       "AND & OR",
+       "NAND & NOR",
+       "XOR & XNOR",
+       "NOT & AND"
+      ],
+      "answer": 1,
+      "explanation": "Any logic function can be built from NAND alone or NOR alone.",
+      "lessonRef": "digital-electronics-01"
+     },
+     {
+      "id": "de-q4",
+      "tag": "digital-electronics",
+      "bank": "topic",
+      "type": "mcq",
+      "difficulty": "medium",
+      "timeSec": 20,
+      "prompt": "By De Morgan's theorem, (A \u00b7 B)' equals:",
+      "options": [
+       "A' \u00b7 B'",
+       "A' + B'",
+       "A + B",
+       "(A + B)'"
+      ],
+      "answer": 1,
+      "explanation": "De Morgan: (A\u00b7B)' = A' + B'. Break the bar, change the operator.",
+      "lessonRef": "digital-electronics-01"
+     },
+     {
+      "id": "de-q5",
+      "tag": "digital-electronics",
+      "bank": "topic",
+      "type": "mcq",
+      "difficulty": "easy",
+      "timeSec": 20,
+      "prompt": "Rows in the truth table of a 3-input gate?",
+      "options": [
+       "3",
+       "6",
+       "8",
+       "9"
+      ],
+      "answer": 2,
+      "explanation": "n inputs give 2^n rows, so 2^3 = 8.",
+      "lessonRef": "digital-electronics-01"
+     },
+     {
+      "id": "de-q6",
+      "tag": "digital-electronics",
+      "bank": "topic",
+      "type": "mcq",
+      "difficulty": "medium",
+      "timeSec": 20,
+      "prompt": "Simplify A + A \u00b7 B",
+      "options": [
+       "A \u00b7 B",
+       "A",
+       "A + B",
+       "B"
+      ],
+      "answer": 1,
+      "explanation": "Absorption law: A + AB = A(1 + B) = A.",
+      "lessonRef": "digital-electronics-01"
+     },
+     {
+      "id": "de-q7",
+      "tag": "digital-electronics",
+      "bank": "topic",
+      "type": "mcq",
+      "difficulty": "easy",
+      "timeSec": 20,
+      "prompt": "In a half adder, the Carry output is produced by which gate?",
+      "options": [
+       "XOR",
+       "AND",
+       "OR",
+       "NAND"
+      ],
+      "answer": 1,
+      "explanation": "Carry = A\u00b7B (1 only when both bits are 1). Sum is the XOR.",
+      "lessonRef": "digital-electronics-01"
+     },
+     {
+      "id": "de-q8",
+      "tag": "digital-electronics",
+      "bank": "topic",
+      "type": "mcq",
+      "difficulty": "easy",
+      "timeSec": 20,
+      "prompt": "Tying both inputs of a NAND gate together makes it behave like a:",
+      "options": [
+       "AND",
+       "OR",
+       "NOT",
+       "XOR"
+      ],
+      "answer": 2,
+      "explanation": "A NAND A = A', which is a NOT gate.",
+      "lessonRef": "digital-electronics-01"
+     }
+    ],
+    "labs": [
+     {
+      "id": "logic-gate-lab",
+      "tag": "digital-electronics",
+      "title": "Logic-gate lab",
+      "difficulty": "easy",
+      "estimatedMinutes": 15,
+      "aim": "Verify the truth tables of the basic gates and build a small circuit from universal gates.",
+      "components": [
+       "switch A",
+       "switch B",
+       "LED output",
+       "AND",
+       "OR",
+       "NOT",
+       "NAND",
+       "NOR",
+       "XOR",
+       "XNOR"
+      ],
+      "tasks": [
+       {
+        "id": "t1",
+        "text": "Place each gate, test all input combinations, compare with the lesson table.",
+        "check": "truthTableFilled"
+       },
+       {
+        "id": "t2",
+        "text": "Build a NOT gate using one NAND gate with both inputs tied together.",
+        "check": "truthTable",
+        "expected": {
+         "inputs": [
+          "A"
+         ],
+         "outputs": [
+          {
+           "cells": [
+            0,
+            1
+           ]
+          },
+          {
+           "cells": [
+            1,
+            0
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "id": "t3",
+        "text": "Build XOR from four NAND gates: N1=NAND(A,B); N2=NAND(A,N1); N3=NAND(B,N1); Output=NAND(N2,N3).",
+        "check": "truthTable",
+        "expected": {
+         "inputs": [
+          "A",
+          "B"
+         ],
+         "outputs": [
+          {
+           "cells": [
+            0,
+            0,
+            0
+           ]
+          },
+          {
+           "cells": [
+            0,
+            1,
+            1
+           ]
+          },
+          {
+           "cells": [
+            1,
+            0,
+            1
+           ]
+          },
+          {
+           "cells": [
+            1,
+            1,
+            0
+           ]
+          }
+         ]
+        }
+       },
+       {
+        "id": "t4",
+        "text": "Half adder: one XOR for Sum, one AND for Carry.",
+        "check": "truthTable",
+        "expected": {
+         "inputs": [
+          "A",
+          "B"
+         ],
+         "outputs": [
+          {
+           "cells": [
+            0,
+            0,
+            0,
+            0
+           ]
+          },
+          {
+           "cells": [
+            0,
+            1,
+            1,
+            0
+           ]
+          },
+          {
+           "cells": [
+            1,
+            0,
+            1,
+            0
+           ]
+          },
+          {
+           "cells": [
+            1,
+            1,
+            0,
+            1
+           ]
+          }
+         ],
+         "outputNames": [
+          "Sum",
+          "Carry"
+         ]
+        }
+       }
+      ],
+      "conclusion": [
+       "Which gate gives 1 only when the inputs differ?",
+       "Why can a design use only NAND gates?"
+      ]
+     }
+    ],
+    "challenges": [
+     {
+      "id": "led-blink",
+      "tag": "microcontrollers",
+      "title": "Blink the LED",
+      "language": "arduino-c",
+      "difficulty": "easy",
+      "xp": 50,
+      "grader": "pin-trace",
+      "statement": "An LED is connected to pin 13. Make it blink: ON for 500 ms, then OFF for 500 ms, repeating forever.",
+      "starter": "void setup() {\n  // TODO: configure pin 13 as an output\n}\n\nvoid loop() {\n  // TODO: LED on, wait 500 ms, LED off, wait 500 ms\n}\n",
+      "tests": [
+       {
+        "id": "1",
+        "text": "Pin 13 is set to OUTPUT after setup()",
+        "check": "pinModeOutput",
+        "pin": 13
+       },
+       {
+        "id": "2",
+        "text": "The first loop turns the pin HIGH",
+        "check": "firstHigh"
+       },
+       {
+        "id": "3",
+        "text": "HIGH lasts 500 ms (+/- 10 ms)",
+        "check": "highMs",
+        "ms": 500,
+        "tol": 10
+       },
+       {
+        "id": "4",
+        "text": "LOW lasts 500 ms (+/- 10 ms)",
+        "check": "lowMs",
+        "ms": 500,
+        "tol": 10
+       },
+       {
+        "id": "5",
+        "text": "The cycle repeats at least 3 times",
+        "check": "cycles",
+        "min": 3
+       }
+      ],
+      "hints": [
+       "A pin must be told whether it is an input or an output. Where should you do that once?",
+       "Use pinMode() in setup(); use digitalWrite() and delay() in loop().",
+       "pinMode(13, OUTPUT); then digitalWrite(13, HIGH); delay(500);"
+      ],
+      "solution": "void setup() { pinMode(13, OUTPUT); }\nvoid loop() {\n  digitalWrite(13, HIGH); delay(500);\n  digitalWrite(13, LOW); delay(500);\n}",
+      "stretch": "Read an LDR with analogRead() and turn the LED on when the reading passes a threshold.",
+      "lessonRef": "digital-electronics-01"
+     }
+    ],
+    "sims": [
+     {
+      "id": "smart-street-light",
+      "year": 2,
+      "title": "Smart street light",
+      "difficulty": "easy",
+      "estimatedMinutes": 10,
+      "tags": [
+       "sensors-instrumentation",
+       "op-amps-feedback",
+       "microcontrollers",
+       "digital-electronics"
+      ],
+      "brief": "A street light must switch on automatically when it gets dark and switch off at dawn, saving energy.",
+      "diagram": [
+       "LDR + fixed resistor (voltage divider)",
+       "Comparator or MCU ADC",
+       "Driver transistor",
+       "Lamp"
+      ],
+      "controls": [
+       {
+        "id": "light",
+        "label": "Ambient light",
+        "min": 0,
+        "max": 100,
+        "default": 80,
+        "unit": "%"
+       },
+       {
+        "id": "threshold",
+        "label": "Threshold",
+        "min": 0,
+        "max": 1023,
+        "default": 600,
+        "unit": "ADC counts"
+       },
+       {
+        "id": "hysteresis",
+        "label": "Hysteresis",
+        "type": "toggle",
+        "default": false
+       },
+       {
+        "id": "mode",
+        "label": "Control mode",
+        "type": "select",
+        "options": [
+         "comparator",
+         "mcu"
+        ],
+        "default": "mcu"
+       }
+      ],
+      "outputs": [
+       "LDR resistance (kOhm)",
+       "Divider voltage",
+       "ADC reading",
+       "Comparator/MCU output",
+       "Lamp state"
+      ],
+      "missions": [
+       {
+        "id": "m1",
+        "text": "Lamp turns on when light falls below 30%."
+       },
+       {
+        "id": "m2",
+        "text": "Remove flicker at dusk by turning hysteresis on."
+       },
+       {
+        "id": "m3",
+        "text": "(Stretch) Dim the lamp with PWM when no motion is detected.",
+        "stretch": true
+       }
+      ],
+      "notes": "Suggested model (not from syllabus, tune freely): Vout = 5 * R_ldr/(R_ldr + R_fixed), ADC = round(Vout/5*1023); divider wired so ADC rises as light falls. Lamp ON when ADC > threshold. With hysteresis: turn ON above threshold+40, turn OFF below threshold-40. Add small noise (+/-15 counts) to the reading so flicker is visible without hysteresis."
+     }
+    ],
+    "gameItems": [
+     {
+      "id": "comp-resistor",
+      "tag": "digital-electronics",
+      "game": "component-id",
+      "name": "Resistor",
+      "family": "passive",
+      "imageUrl": ""
+     },
+     {
+      "id": "comp-ceramic-cap",
+      "tag": "digital-electronics",
+      "game": "component-id",
+      "name": "Ceramic capacitor",
+      "family": "passive",
+      "imageUrl": ""
+     },
+     {
+      "id": "comp-electrolytic-cap",
+      "tag": "digital-electronics",
+      "game": "component-id",
+      "name": "Electrolytic capacitor (polarised)",
+      "family": "passive",
+      "imageUrl": ""
+     },
+     {
+      "id": "comp-inductor",
+      "tag": "digital-electronics",
+      "game": "component-id",
+      "name": "Inductor",
+      "family": "passive",
+      "imageUrl": ""
+     },
+     {
+      "id": "comp-potentiometer",
+      "tag": "digital-electronics",
+      "game": "component-id",
+      "name": "Potentiometer",
+      "family": "passive",
+      "imageUrl": ""
+     },
+     {
+      "id": "comp-diode",
+      "tag": "digital-electronics",
+      "game": "component-id",
+      "name": "Diode",
+      "family": "semiconductor",
+      "imageUrl": ""
+     },
+     {
+      "id": "comp-led",
+      "tag": "digital-electronics",
+      "game": "component-id",
+      "name": "LED",
+      "family": "semiconductor",
+      "imageUrl": ""
+     },
+     {
+      "id": "comp-npn",
+      "tag": "digital-electronics",
+      "game": "component-id",
+      "name": "NPN transistor",
+      "family": "semiconductor",
+      "imageUrl": ""
+     },
+     {
+      "id": "comp-ldr",
+      "tag": "digital-electronics",
+      "game": "component-id",
+      "name": "LDR",
+      "family": "sensor-output",
+      "imageUrl": ""
+     },
+     {
+      "id": "comp-push-button",
+      "tag": "digital-electronics",
+      "game": "component-id",
+      "name": "Push button",
+      "family": "sensor-output",
+      "imageUrl": ""
+     },
+     {
+      "id": "comp-buzzer",
+      "tag": "digital-electronics",
+      "game": "component-id",
+      "name": "Buzzer",
+      "family": "sensor-output",
+      "imageUrl": ""
+     },
+     {
+      "id": "comp-555",
+      "tag": "digital-electronics",
+      "game": "component-id",
+      "name": "555 timer IC",
+      "family": "semiconductor",
+      "imageUrl": ""
+     }
+    ]
+   }
