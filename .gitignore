@@ -2,3 +2,5 @@
 node_modules
 *serviceAccount*.json
 .vercel
+
+dist

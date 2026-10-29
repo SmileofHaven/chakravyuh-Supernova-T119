@@ -1,23 +1,29 @@
-import { auth } from "./firebase";
+import { auth } from "../firebase";
 
-// Calls our Vercel API routes with the logged-in user's Firebase token
-async function call(path, body) {
+async function call(path, method = "POST", body) {
   const user = auth.currentUser;
   if (!user) throw new Error("Not logged in");
   const token = await user.getIdToken();
   const res = await fetch(path, {
-    method: "POST",
+    method,
     headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
-    body: JSON.stringify(body),
+    body: body ? JSON.stringify(body) : undefined,
   });
   const data = await res.json();
   if (!res.ok) throw new Error(data.error || "Request failed");
   return data;
 }
 
-// messages: [{role:"user"|"assistant", content}], mode: "tutor"|"debug"|"explain"
-export const chat = (messages, mode = "tutor") => call("/api/chat", { messages, mode });
+// ---- AI ----
+// Explain: chat(msgs, { mode:"explain", level:"simple"|"standard"|"interview", tag, lessonId })
+// Debug:   chat(msgs, { mode:"debug", rung:1|2|3|4, attempts, tag })   (rung 4 = show answer, needs attempts>=1)
+// Interview: chat(msgs, { mode:"interview", jobType, round, difficulty })
+export const chat = (messages, opts = {}) => call("/api/chat", "POST", { messages, mode: "explain", ...opts });
 
-// type: "lesson"|"quiz"|"challenge"
-export const saveProgress = (type, id, score = 0, total = 0) =>
-  call("/api/progress", { type, id, score, total });
+// ---- Progress ----
+// type: "lesson"|"lab"|"code"|"quiz"|"sim";  score (0-100) only for quiz
+// returns { gained, xp, level, xpToNext, streak, topic, newBadges, passed, yearProgress, unlocked, gate }
+export const saveProgress = (type, tag, id, score) => call("/api/progress", "POST", { type, tag, id, score });
+
+// returns { user:{name,xp,level,xpToNext,streak,badges}, topics:{[tag]:{lesson,lab,code,quiz,quizBest,mastered}}, yearProgress, unlocked, gate }
+export const getDashboard = () => call("/api/progress", "GET");
