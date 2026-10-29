@@ -1,24 +1,20 @@
 {
-  "name": "chakravyuh-supernova-t119",
+  "name": "supernova-entc-learning-platform",
+  "private": true,
   "version": "1.0.0",
-  "description": "> **CHAKRAVYUH • AI Vibe Coding Challenge**\r > An interactive, AI-powered web platform that makes Electronics & Telecommunication (ENTC) learning practical, engaging, and fun.",
-  "main": "api.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/SmileofHaven/chakravyuh-Supernova-T119"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "type": "module",
-  "bugs": {
-    "url": "https://github.com/SmileofHaven/chakravyuh-Supernova-T119/issues"
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "homepage": "https://github.com/SmileofHaven/chakravyuh-Supernova-T119#readme",
   "dependencies": {
-    "firebase-admin": "^14.5.0"
-  }
+    "@vitejs/plugin-react": "latest",
+    "vite": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "motion": "latest",
+    "lucide-react": "latest"
+  },
+  "devDependencies": {}
 }
